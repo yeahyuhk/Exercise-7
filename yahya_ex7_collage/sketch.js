@@ -22,11 +22,8 @@ function draw() {
   background(100);
 
   image(treedead, 100, 100);
-  if (cuecloudz === true) {
+  if (frameCount % 120 === 0) {
     cloudz();
-    cuecloudz = false;
-  }
-  if (cueBirds === false) {
     for (var i = 0; i < cloudz.length; i++) {
 
       cloudz[i].run();
@@ -35,12 +32,11 @@ function draw() {
       }
     }
   }
-
 }
 
 function cloudz() {
   for (var i = 0; i < 15; i += 5) {
-    var b = new image(cloud, createVector(0, random(0, 250)));
+    var b = new image(cloud, createVector(0, 5));
     clouds.push(b);
   }
 }
